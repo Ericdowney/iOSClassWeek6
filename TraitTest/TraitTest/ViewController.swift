@@ -9,13 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    lazy var displayer: AlertDisplayer = {
+        RealAlertDisplayer(controllerPresenter: self)
+    }()
 
     @IBAction func buttonTapped() {
-        let alert = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
-        alert.addAction( UIAlertAction(title: "Cancel", style: .destructive, handler: nil) )
-        alert.addAction( UIAlertAction(title: "Do Something", style: .default, handler: nil) )
-        
-        present(alert, animated: UIView.areAnimationsEnabled, completion: nil)
+        displayer.displayAlert(with: "Title", and: "Message")
     }
     
 }
