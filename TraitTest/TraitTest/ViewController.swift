@@ -10,16 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func buttonTapped() {
+        let alert = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
+        alert.addAction( UIAlertAction(title: "Cancel", style: .destructive, handler: nil) )
+        alert.addAction( UIAlertAction(title: "Do Something", style: .default, handler: nil) )
+        
+        present(alert, animated: UIView.areAnimationsEnabled, completion: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
 
